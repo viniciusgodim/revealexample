@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>reveal.js – The HTML Presentation Framework</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/black.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+
+				<section data-auto-animate>
+					<p>In the next slide I will show a chemical reaction.</p>
+					<p class="fragment">This was drawn using the <code>LaTeX</code> package <code>chemfig</code>.</p>
+					<p class="fragment">The image was converted from <code>.pdf</code> to <code>.svg</code>
+					<div class="fragment">
+					<p>By using the following <code>css</code> code I get to use a dark background without manually inverting the image</p>
+					<pre data-id="code-animation"><code class="hlcss" data-trim data-line-numbers>
+						.inverted {
+						    -webkit-filter: invert(100%);
+						    filter: invert(100%);
+						}
+					</code></pre></div>
+				</section>
+
+				<section>
+					<h3>Chemical reaction</h3>
+					<img src="chemicalCrop.svg" class="inverted stretch"></img>
+					<p>It's a vectorized image in a responsive setting!</p>
+					<p>This is the hydrogenation of α-Pinene, by the way.</p>
+				</section>
+
+				<section>
+					<h3>Chemical process</h3>
+					<p>The following diagram was drawn using <a href="https://app.diagrams.net/">app.diagrams.net</a>.</p>
+					<img src="chemicalProcess.svg" class="inverted stretch"></img>
+					<p>By setting the image with the same class <code>inverted</code>, we get the same effect.</p>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/zoom/zoom.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/search/search.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+
+			// Also available as an ES module, see:
+			// https://revealjs.com/initialization/
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				center: true,
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight ]
+			});
+
+		</script>
+
+	</body>
+</html>
